@@ -9,9 +9,10 @@
     "start": "node __sapper__/build"
   },
   "dependencies": {
-    "compression": "^1.7.1",
-    "polka": "next",
-    "sirv": "^1.0.0"
+    "compression": "github:cryptodeal/compression",
+    "fyrejet": "github:cryptodeal/fyrejet",
+    "low-http-server": "github:cryptodeal/low-http-server",
+    "sirv": "^1.0.10"
   },
   "devDependencies": {
     "sapper": "^0.28.0",

@@ -1,7 +1,12 @@
 # sapper-template
 
-The default template for setting up a [Sapper](https://github.com/sveltejs/sapper) project. Can use either Rollup or webpack as bundler.
+The default template for setting up a [Sapper](https://github.com/sveltejs/sapper) project, modified to use Fyrejet as server for access to potential performance boosts via HTTP server written in C++. 
 
+# Current State of Repository
+
+Currently, the default Sapper template using rollup and Polka (native javascript HTTP server) outperforms this version of the project using Fyrejet. It is likely this is due to the middleware of fyrejet needing to convert the uWebsockets.HTTPRequest object, which is an interface of the Request object, to the HTTP request object type native to javascript.
+
+With that being said, the uWebsockets.js library still shows significant benchmark gains to native HTTP server, so optimizing the middleware layer in the forked fyrejet repository is probably going to be key in surpassing the benchmarks tests of the default Sapper template using Polka.
 
 ## Getting started
 
