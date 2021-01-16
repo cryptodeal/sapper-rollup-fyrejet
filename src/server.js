@@ -12,10 +12,10 @@ fyre({
   serverType: 'uWebSockets' // also required, or there will always be errors
 })
   //SETTINGS (MAX COMPATABILITY FOR NOW, OPTIMIZE LATER)
-  .set('fyrejet mode', 'properties as functions')
+  //.set('fyrejet mode', 'properties as functions')
 
   //SETTINGS (MAX PERFORMANCE, TESTING)
-  //.set('fyrejet mode', 'api')
+  .set('fyrejet mode', 'api')
 
 	.use(
 		compression({ threshold: 0 }),
