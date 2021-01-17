@@ -3,191 +3,203 @@
 Benchmarks run using [WRK](https://github.com/wg/wrk):
 
 ```
-wrk -t8 -c64 -d20s http://localhost:3000 
+wrk -t6 -c64 -d20s http://localhost:3000 
 ```
 
 ## Default Template Baseline Performance (Polka)
+### Average across 5 tests:
+Requests/sec: 2619.732
+Transfer/sec: 5.7MB
+
 * Test 1:
 ```
-cryptodeal@Jamess-MBP Desktop % wrk -t8 -c64 -d20s http://localhost:3000                   
+cryptodeal@Jamess-MacBook-Pro ~ % wrk -t6 -c64 -d20s http://localhost:3000
 Running 20s test @ http://localhost:3000
-  8 threads and 64 connections
+  6 threads and 64 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
-    Latency     7.71ms    2.57ms  71.05ms   93.89%
-    Req/Sec     1.06k   160.34     1.21k    91.75%
-  168819 requests in 20.04s, 367.24MB read
-Requests/sec:   8425.82
-Transfer/sec:     18.33MB
+    Latency    45.20ms  121.67ms   1.06s    96.19%
+    Req/Sec   443.79    133.92   777.00     63.35%
+  50868 requests in 20.06s, 110.65MB read
+Requests/sec:   2536.39
+Transfer/sec:      5.52MB
 ```
 * Test 2:
 ```
-cryptodeal@Jamess-MBP Desktop % wrk -t8 -c64 -d20s http://localhost:3000
+cryptodeal@Jamess-MacBook-Pro ~ % wrk -t6 -c64 -d20s http://localhost:3000
 Running 20s test @ http://localhost:3000
-  8 threads and 64 connections
+  6 threads and 64 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
-    Latency     7.79ms    2.61ms  61.41ms   92.77%
-    Req/Sec     1.05k   178.24     1.49k    90.88%
-  167045 requests in 20.04s, 363.38MB read
-Requests/sec:   8336.17
-Transfer/sec:     18.13MB
+    Latency    45.01ms  119.84ms   1.02s    96.22%
+    Req/Sec   437.19    107.32   797.00     71.38%
+  50209 requests in 20.06s, 109.22MB read
+Requests/sec:   2503.48
+Transfer/sec:      5.45MB
 ```
 * Test 3: 
 ```
-cryptodeal@Jamess-MBP Desktop % wrk -t8 -c64 -d20s http://localhost:3000
+cryptodeal@Jamess-MacBook-Pro ~ % wrk -t6 -c64 -d20s http://localhost:3000
 Running 20s test @ http://localhost:3000
-  8 threads and 64 connections
+  6 threads and 64 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
-    Latency     7.49ms    2.00ms  50.50ms   91.03%
-    Req/Sec     1.08k   144.38     1.21k    90.44%
-  172246 requests in 20.03s, 374.69MB read
-Requests/sec:   8598.39
-Transfer/sec:     18.70MB
+    Latency    43.36ms  121.30ms   1.03s    96.20%
+    Req/Sec   480.72    122.96   777.00     68.94%
+  55139 requests in 20.07s, 119.95MB read
+Requests/sec:   2747.91
+Transfer/sec:      5.98MB
 ```
 * Test 4: 
 ```
-cryptodeal@Jamess-MBP Desktop % wrk -t8 -c64 -d20s http://localhost:3000
+cryptodeal@Jamess-MacBook-Pro ~ % wrk -t6 -c64 -d20s http://localhost:3000
 Running 20s test @ http://localhost:3000
-  8 threads and 64 connections
+  6 threads and 64 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
-    Latency     7.09ms    1.13ms  22.09ms   80.09%
-    Req/Sec     1.13k    58.09     1.21k    71.94%
-  180576 requests in 20.03s, 392.81MB read
-Requests/sec:   9016.90
-Transfer/sec:     19.61MB
+    Latency    42.85ms  120.05ms   1.03s    96.24%
+    Req/Sec   484.12    125.79   810.00     65.79%
+  55608 requests in 20.05s, 120.97MB read
+Requests/sec:   2773.31
+Transfer/sec:      6.03MB
 ```
 * Test 5: 
 ```
-cryptodeal@Jamess-MBP Desktop % wrk -t8 -c64 -d20s http://localhost:3000
+cryptodeal@Jamess-MacBook-Pro ~ % wrk -t6 -c64 -d20s http://localhost:3000
 Running 20s test @ http://localhost:3000
-  8 threads and 64 connections
+  6 threads and 64 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
-    Latency     8.28ms    2.42ms  67.96ms   91.63%
-    Req/Sec     0.98k   134.79     1.16k    80.75%
-  156079 requests in 20.04s, 339.52MB read
-Requests/sec:   7788.59
-Transfer/sec:     16.94MB
+    Latency    23.79ms    9.27ms  93.42ms   75.58%
+    Req/Sec   424.96     92.52   747.00     67.67%
+  50842 requests in 20.04s, 110.60MB read
+Requests/sec:   2537.57
+Transfer/sec:      5.52MB
 ```
 
 ## Fyrejet Mode (max perf): api
+### Average across 5 tests:
+Requests/sec: 2653.126
+Transfer/sec: 5.65MB
+
 * Test 1:
 ```
-cryptodeal@Jamess-MBP Desktop % wrk -t8 -c64 -d20s http://localhost:3000            
+cryptodeal@Jamess-MacBook-Pro ~ % wrk -t6 -c64 -d20s http://localhost:3000
 Running 20s test @ http://localhost:3000
-  8 threads and 64 connections
+  6 threads and 64 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
-    Latency     8.29ms    2.45ms  46.20ms   86.46%
-    Req/Sec     0.97k   135.13     1.50k    83.75%
-  155437 requests in 20.04s, 331.01MB read
-Requests/sec:   7757.14
-Transfer/sec:     16.52MB
+    Latency    44.74ms  122.40ms   1.05s    96.18%
+    Req/Sec   455.98    105.59   757.00     68.79%
+  52277 requests in 20.06s, 111.33MB read
+Requests/sec:   2606.60
+Transfer/sec:      5.55MB
 ```
 * Test 2:
 ```
-cryptodeal@Jamess-MBP Desktop % wrk -t8 -c64 -d20s http://localhost:3000
+cryptodeal@Jamess-MacBook-Pro ~ % wrk -t6 -c64 -d20s http://localhost:3000
 Running 20s test @ http://localhost:3000
-  8 threads and 64 connections
+  6 threads and 64 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
-    Latency     8.20ms    2.35ms  45.08ms   83.86%
-    Req/Sec     0.98k   126.63     1.13k    88.06%
-  157006 requests in 20.03s, 334.35MB read
-Requests/sec:   7838.42
-Transfer/sec:     16.69MB
+    Latency    21.77ms    8.54ms  82.36ms   74.38%
+    Req/Sec   464.37     95.31   797.00     66.83%
+  55547 requests in 20.03s, 118.29MB read
+Requests/sec:   2773.12
+Transfer/sec:      5.91MB
 ```
 * Test 3:
 ```
-cryptodeal@Jamess-MBP Desktop % wrk -t8 -c64 -d20s http://localhost:3000
+cryptodeal@Jamess-MacBook-Pro ~ % wrk -t6 -c64 -d20s http://localhost:3000
 Running 20s test @ http://localhost:3000
-  8 threads and 64 connections
+  6 threads and 64 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
-    Latency     8.02ms    1.87ms  30.25ms   79.57%
-    Req/Sec     1.00k    64.76     1.13k    76.31%
-  159872 requests in 20.03s, 340.46MB read
-Requests/sec:   7982.02
-Transfer/sec:     17.00MB
+    Latency    22.08ms    9.04ms  94.18ms   73.57%
+    Req/Sec   458.50    111.51   770.00     65.50%
+  54853 requests in 20.03s, 116.81MB read
+Requests/sec:   2738.51
+Transfer/sec:      5.83MB
 ```
 * Test 4:
 ```
-cryptodeal@Jamess-MBP Desktop % wrk -t8 -c64 -d20s http://localhost:3000
+cryptodeal@Jamess-MacBook-Pro ~ % wrk -t6 -c64 -d20s http://localhost:3000
 Running 20s test @ http://localhost:3000
-  8 threads and 64 connections
+  6 threads and 64 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
-    Latency     7.94ms    1.85ms  34.41ms   79.47%
-    Req/Sec     1.01k    63.45     1.83k    79.38%
-  161498 requests in 20.04s, 343.92MB read
-Requests/sec:   8059.34
-Transfer/sec:     17.16MB
+    Latency    45.18ms  120.84ms   1.04s    96.18%
+    Req/Sec   439.13    109.60   737.00     68.44%
+  50390 requests in 20.06s, 107.31MB read
+Requests/sec:   2512.48
+Transfer/sec:      5.35MB
 ```
 * Test 5:
 ```
-cryptodeal@Jamess-MBP Desktop % wrk -t8 -c64 -d20s http://localhost:3000
+cryptodeal@Jamess-MacBook-Pro ~ % wrk -t6 -c64 -d20s http://localhost:3000
 Running 20s test @ http://localhost:3000
-  8 threads and 64 connections
+  6 threads and 64 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
-    Latency     8.07ms    1.91ms  31.04ms   79.26%
-    Req/Sec     1.00k    64.38     1.13k    78.19%
-  158814 requests in 20.03s, 338.20MB read
-Requests/sec:   7927.16
-Transfer/sec:     16.88MB
+    Latency    44.23ms  121.14ms   1.03s    96.19%
+    Req/Sec   461.14    114.82   747.00     67.98%
+  52812 requests in 20.04s, 112.47MB read
+Requests/sec:   2634.92
+Transfer/sec:      5.61MB
 ```
 
 ## Fyrejet Mode (max compat): properties as functions 
+### Average across 5 tests:
+Requests/sec: 2418.558
+Transfer/sec: 5.148MB
+
 * Test 1:
 ```
-cryptodeal@Jamess-MBP Desktop % wrk -t8 -c64 -d20s http://localhost:3000
+cryptodeal@Jamess-MacBook-Pro ~ % wrk -t6 -c64 -d20s http://localhost:3000
 Running 20s test @ http://localhost:3000
-  8 threads and 64 connections
+  6 threads and 64 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
-    Latency     9.00ms    2.45ms  44.07ms   87.27%
-    Req/Sec     0.90k   111.97     1.05k    90.75%
-  143034 requests in 20.04s, 304.60MB read
-Requests/sec:   7136.29
-Transfer/sec:     15.20MB
+    Latency    22.88ms    9.67ms  95.37ms   80.03%
+    Req/Sec   443.22    112.76   720.00     64.33%
+  53040 requests in 20.05s, 112.95MB read
+Requests/sec:   2645.29
+Transfer/sec:      5.63MB
 ```
 * Test 2:
 ```
-cryptodeal@Jamess-MBP Desktop % wrk -t8 -c64 -d20s http://localhost:3000
+cryptodeal@Jamess-MacBook-Pro ~ % wrk -t6 -c64 -d20s http://localhost:3000
 Running 20s test @ http://localhost:3000
-  8 threads and 64 connections
+  6 threads and 64 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
-    Latency     9.53ms    2.95ms  52.55ms   89.48%
-    Req/Sec   849.37    127.69     1.05k    83.50%
-  135508 requests in 20.05s, 288.57MB read
-Requests/sec:   6757.87
-Transfer/sec:     14.39MB
+    Latency    22.98ms    8.93ms  99.18ms   76.09%
+    Req/Sec   439.85     95.29   680.00     66.00%
+  52610 requests in 20.03s, 112.04MB read
+Requests/sec:   2626.54
+Transfer/sec:      5.59MB
 ```
 * Test 3:
 ```
-cryptodeal@Jamess-MBP Desktop % wrk -t8 -c64 -d20s http://localhost:3000
+cryptodeal@Jamess-MacBook-Pro ~ % wrk -t6 -c64 -d20s http://localhost:3000
 Running 20s test @ http://localhost:3000
-  8 threads and 64 connections
+  6 threads and 64 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
-    Latency     8.86ms    2.36ms  43.11ms   84.24%
-    Req/Sec     0.91k    95.30     1.05k    84.56%
-  144787 requests in 20.03s, 308.33MB read
-Requests/sec:   7228.02
-Transfer/sec:     15.39MB
+    Latency    46.64ms  121.79ms   1.04s    96.17%
+    Req/Sec   417.70    107.01   696.00     65.53%
+  47822 requests in 20.07s, 101.84MB read
+Requests/sec:   2383.10
+Transfer/sec:      5.07MB
 ```
 * Test 4:
 ```
-cryptodeal@Jamess-MBP Desktop % wrk -t8 -c64 -d20s http://localhost:3000
+cryptodeal@Jamess-MacBook-Pro ~ % wrk -t6 -c64 -d20s http://localhost:3000
 Running 20s test @ http://localhost:3000
-  8 threads and 64 connections
+  6 threads and 64 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
-    Latency     8.98ms    2.00ms  34.29ms   80.40%
-    Req/Sec     0.89k    67.60     1.05k    66.44%
-  142705 requests in 20.04s, 303.90MB read
-Requests/sec:   7120.88
-Transfer/sec:     15.16MB
+    Latency    47.06ms  120.50ms   1.03s    96.19%
+    Req/Sec   403.35     80.58   676.00     69.28%
+  46331 requests in 20.05s, 98.66MB read
+Requests/sec:   2310.40
+Transfer/sec:      4.92MB
 ```
 * Test 5:
 ```
-cryptodeal@Jamess-MBP Desktop % wrk -t8 -c64 -d20s http://localhost:3000
+cryptodeal@Jamess-MacBook-Pro ~ % wrk -t6 -c64 -d20s http://localhost:3000
 Running 20s test @ http://localhost:3000
-  8 threads and 64 connections
+  6 threads and 64 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
-    Latency     8.79ms    2.38ms  42.44ms   83.44%
-    Req/Sec     0.92k   103.21     2.05k    82.19%
-  146034 requests in 20.04s, 310.99MB read
-Requests/sec:   7285.94
-Transfer/sec:     15.52MB
+    Latency    49.31ms  120.98ms   1.03s    96.17%
+    Req/Sec   372.01     73.50   640.00     75.04%
+  42688 requests in 20.07s, 90.91MB read
+Requests/sec:   2127.46
+Transfer/sec:      4.53MB
 ```
